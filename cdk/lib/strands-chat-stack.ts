@@ -73,7 +73,7 @@ export class StrandsChatStack extends cdk.Stack {
     }
 
     const userPool = new UserPool(this, 'UserPool', {
-      selfSignUpEnabled: true,
+      selfSignUpEnabled: false,
       signInAliases: {
         username: false,
         email: true,
@@ -171,7 +171,7 @@ export class StrandsChatStack extends cdk.Stack {
       memorySize: 1024,
       timeout: cdk.Duration.minutes(15),
       ephemeralStorageSize: cdk.Size.mebibytes(1024),
-      architecture: Architecture.X86_64,
+      architecture: Architecture.ARM_64,
       environment: {
         AWS_LWA_INVOKE_MODE: 'RESPONSE_STREAM',
         AWS_LWA_READINESS_CHECK_PATH: '/api/',

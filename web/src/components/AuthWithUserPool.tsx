@@ -72,7 +72,7 @@ const AuthWithUserPool = (props: { children: ReactNode }) => {
   return (
     <div className="min-h-dvh bg-white transition-colors duration-300 dark:bg-gray-900">
       <ThemeProvider>
-        <Authenticator
+        <Authenticator hideSignUp={true}
           components={{
             Header() {
               return (

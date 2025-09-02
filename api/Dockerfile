@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 public.ecr.aws/lambda/python:3.13
+FROM --platform=linux/arm64 public.ecr.aws/lambda/python:3.13
 
 WORKDIR /var/task
 
