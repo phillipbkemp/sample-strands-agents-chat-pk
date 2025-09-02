@@ -25,7 +25,7 @@ export const parameter: Parameter = {
     {
       id: 'us.amazon.nova-premier-v1:0',
       region: 'us-east-1',
-      displayName: 'Nove Premier',
+      displayName: 'Nova Premier',
     },
   ],
 

@@ -92,7 +92,22 @@ cp parameter.template.ts parameter.ts
 # Note: If tavilyApiKeySecretArn is null, web search tool will be disabled
 ```
 
-### Step 3: (Required) Deploy with CDK
+### Step 3: (Only required for ARM CPU  users e.g. Apple silicon) Change CPU specific settings 
+
+<details>
+<summary>Click to expand ARM specific setup instructions</summary>
+
+**Docker Configuration:**
+1. Open `api/Dockerfile`
+2. On the first line, replace `amd64` with `arm64`
+
+**Docker Configuration:**
+1. Open `cdk/lib/strands-chat-stack.ts`
+2. Replace `architecture: Architecture.X86_64` with `architecture: Architecture.ARM_64`
+
+</details>
+
+### Step 4: (Required) Deploy with CDK
 
 ```bash
 # Bootstrap CDK (run once per AWS account/region)
@@ -207,7 +222,7 @@ const userPool = new UserPool(this, 'UserPool', {
 
 ```tsx
 // In AuthWithUserPool.tsx
-<Authenticator hideSignup={true}>
+<Authenticator hideSignUp={true}>
   {/* ... existing content */}
 </Authenticator>
 ```
